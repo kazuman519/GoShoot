@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetStore\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\AssetStore\charactor\Script\ScreenShot.cs" />
      <Compile Include="Assets\Script\CameraController.cs" />
      <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Monster.cs" />
      <Compile Include="Assets\Script\Player.cs" />
+     <None Include="Assets\AssetStore\Medieval_House\Info.txt" />
      <None Include="Assets\AssetStore\charactor\Shader\WrapLambert.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
