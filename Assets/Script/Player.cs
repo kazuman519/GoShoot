@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameController : MonoBehaviour {
+public class Player : MonoBehaviour {
 
-	public Player player;
+	public string name = "takesi";
 
 	// Use this for initialization
 	void Start () {
-		print ("name:"+player.name);
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
 	}
 }

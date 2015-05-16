@@ -49,6 +49,7 @@
      <Compile Include="Assets\Cha_Data\Script\ScreenShot.cs" />
      <Compile Include="Assets\Script\CameraController.cs" />
      <Compile Include="Assets\Script\GameController.cs" />
+     <Compile Include="Assets\Script\Player.cs" />
      <None Include="Assets\Cha_Data\Shader\WrapLambert.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
