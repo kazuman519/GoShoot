@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print ("CameraController Start");
-		mainCamera.enabled = true;
-		charactorCamera.enabled = false;
+		mainCamera.enabled =  false;
+		charactorCamera.enabled = true;
 	}
 	
 	// Update is called once per frame
