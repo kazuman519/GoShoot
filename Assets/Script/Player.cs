@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public string name = "takesi";
+	public string name = "homura";
+	public float  turmPower = 3000;
 
 	// Use this for initialization
 	void Start () {

@@ -12,5 +12,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		print ("turnPower:" + player.turmPower);
+		player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
 	}
 }
