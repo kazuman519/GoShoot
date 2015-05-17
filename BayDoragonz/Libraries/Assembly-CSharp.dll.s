@@ -342,19 +342,19 @@ bl p_13
 	.byte 52,32,154,229,0,16,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 32
 	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,0,0,160,227,72,0,202,229,1,0,160,227
-	.byte 73,0,202,229,201,0,0,234,14,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,0,0,194,42,183,238
-	.byte 67,43,180,238,16,250,241,238,192,0,0,106,191,0,0,74,52,32,154,229,0,16,159,229,0,0,0,234
+	.byte 73,0,202,229,221,0,0,234,14,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,0,0,194,42,183,238
+	.byte 67,43,180,238,16,250,241,238,212,0,0,106,211,0,0,74,52,32,154,229,0,16,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 28
-	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,181,0,0,234,73,0,218,229,0,0,80,227
-	.byte 102,0,0,10,15,10,154,237,192,42,183,238,18,43,139,237
+	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,201,0,0,234,73,0,218,229,0,0,80,227
+	.byte 122,0,0,10,15,10,154,237,192,42,183,238,18,43,139,237
 bl p_13
 
 	.byte 16,10,3,238,195,58,183,238,18,43,155,237,67,43,50,238,194,11,183,238,15,10,138,237,15,10,154,237,192,58,183,238
-	.byte 0,42,159,237,0,0,0,234,0,0,192,191,194,42,183,238,67,43,180,238,16,250,241,238,15,0,0,106,14,0,0,74
+	.byte 0,42,159,237,0,0,0,234,0,0,32,192,194,42,183,238,67,43,180,238,16,250,241,238,15,0,0,106,14,0,0,74
 	.byte 52,32,154,229,0,0,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 36
 	.byte 0,0,159,231,0,16,144,229,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,0,0,160,227,73,0,202,229
-	.byte 1,0,160,227,74,0,202,229,143,0,0,234,15,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,0,0
+	.byte 1,0,160,227,74,0,202,229,163,0,0,234,15,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,128,191
 	.byte 194,42,183,238,67,43,180,238,16,250,241,238,37,0,0,106,36,0,0,74,44,32,154,229,0,16,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 40
 	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,52,32,154,229,0,16,159,229,0,0,0,234
@@ -369,8 +369,12 @@ bl p_28
 	.byte 28,16,154,229,10,0,160,225
 bl _m_f
 
-	.byte 96,0,0,234,15,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,48,64,194,42,183,238,67,43,180,238
-	.byte 16,250,241,238,87,0,0,106,86,0,0,74,52,32,154,229,0,0,159,229,0,0,0,234
+	.byte 116,0,0,234,15,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,0,0,194,42,183,238,67,43,180,238
+	.byte 16,250,241,238,10,0,0,106,9,0,0,74,52,32,154,229,0,16,159,229,0,0,0,234
+	.long mono_aot_Assembly_CSharp_got - . + 48
+	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,96,0,0,234,15,10,154,237,192,58,183,238
+	.byte 0,42,159,237,0,0,0,234,0,0,48,64,194,42,183,238,67,43,180,238,16,250,241,238,87,0,0,106,86,0,0,74
+	.byte 52,32,154,229,0,0,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 36
 	.byte 0,0,159,231,0,16,144,229,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,75,0,0,234,74,0,218,229
 	.byte 0,0,80,227,72,0,0,10,16,10,154,237,192,42,183,238,18,43,139,237
@@ -379,11 +383,11 @@ bl p_13
 	.byte 16,10,3,238,195,58,183,238,18,43,155,237,67,43,50,238,194,11,183,238,16,10,138,237,16,10,154,237,192,58,183,238
 	.byte 0,42,159,237,0,0,0,234,0,0,0,0,194,42,183,238,67,43,180,238,16,250,241,238,14,0,0,106,13,0,0,74
 	.byte 52,32,154,229,0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 48
+	.long mono_aot_Assembly_CSharp_got - . + 52
 	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,0,0,160,227,74,0,202,229,1,0,160,227
 	.byte 75,0,202,229,38,0,0,234,16,10,154,237,192,58,183,238,0,42,159,237,0,0,0,234,0,0,64,64,194,42,183,238
 	.byte 67,43,180,238,16,250,241,238,29,0,0,106,28,0,0,74,52,32,154,229,0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 52
+	.long mono_aot_Assembly_CSharp_got - . + 56
 	.byte 1,16,159,231,2,0,160,225,0,32,146,229,15,224,160,225,0,241,146,229,52,192,154,229,80,0,138,226,0,16,144,229
 	.byte 32,16,139,229,4,16,144,229,36,16,139,229,8,16,144,229,40,16,139,229,12,0,144,229,44,0,139,229,12,0,160,225
 	.byte 80,0,139,229,32,16,155,229,36,32,155,229,40,48,155,229,44,0,155,229,0,0,141,229,80,0,155,229,0,224,156,229
@@ -417,7 +421,7 @@ bl p_30
 bl p_31
 
 	.byte 0,0,80,227,28,0,0,218,0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 56
+	.long mono_aot_Assembly_CSharp_got - . + 60
 	.byte 0,0,159,231
 bl p_22
 
@@ -523,7 +527,7 @@ _m_11:
 
 	.byte 13,192,160,225,128,64,45,233,13,112,160,225,0,89,45,233,8,208,77,226,13,176,160,225,0,0,139,229,4,16,139,229
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 60
+	.long mono_aot_Assembly_CSharp_got - . + 64
 	.byte 1,16,159,231,4,0,155,229,0,224,144,229,1,128,160,225
 bl p_34
 
@@ -540,7 +544,7 @@ _m_12:
 
 	.byte 13,192,160,225,128,64,45,233,13,112,160,225,0,89,45,233,8,208,77,226,13,176,160,225,0,0,139,229,4,16,139,229
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 60
+	.long mono_aot_Assembly_CSharp_got - . + 64
 	.byte 1,16,159,231,4,0,155,229,0,224,144,229,1,128,160,225
 bl p_34
 
@@ -557,7 +561,7 @@ _m_13:
 
 	.byte 13,192,160,225,128,64,45,233,13,112,160,225,0,93,45,233,4,208,77,226,13,176,160,225,0,160,160,225,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 64
+	.long mono_aot_Assembly_CSharp_got - . + 68
 	.byte 0,0,159,231,16,0,138,229,0,42,159,237,0,0,0,234,0,0,122,69,194,42,183,238,194,11,183,238,5,10,138,237
 	.byte 10,0,160,225
 bl p_1
@@ -599,7 +603,7 @@ _m_16:
 
 	.byte 13,192,160,225,128,64,45,233,13,112,160,225,32,93,45,233,64,208,77,226,13,176,160,225,48,0,139,229,1,160,160,225
 	.byte 0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 68
+	.long mono_aot_Assembly_CSharp_got - . + 72
 	.byte 0,0,159,231,56,0,139,229,10,0,160,225,0,224,154,229
 bl p_36
 
@@ -617,12 +621,12 @@ bl p_36
 bl p_37
 
 	.byte 0,32,160,225,0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 72
+	.long mono_aot_Assembly_CSharp_got - . + 76
 	.byte 1,16,159,231,2,0,160,225,0,224,146,229
 bl p_38
 
 	.byte 0,0,80,227,102,0,0,10,0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 76
+	.long mono_aot_Assembly_CSharp_got - . + 80
 	.byte 0,0,159,231
 bl p_22
 
@@ -630,7 +634,7 @@ bl p_22
 bl p_36
 
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 80
+	.long mono_aot_Assembly_CSharp_got - . + 84
 	.byte 1,16,159,231,0,224,144,229,1,128,160,225
 bl p_39
 
@@ -673,7 +677,7 @@ _m_18:
 
 	.byte 13,192,160,225,128,64,45,233,13,112,160,225,0,93,45,233,4,208,77,226,13,176,160,225,0,160,160,225,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 84
+	.long mono_aot_Assembly_CSharp_got - . + 88
 	.byte 0,0,159,231,16,0,138,229,0,42,159,237,0,0,0,234,0,64,156,69,194,42,183,238,194,11,183,238,5,10,138,237
 	.byte 10,0,160,225
 bl p_1
@@ -701,9 +705,9 @@ bl p_13
 
 	.byte 16,10,3,238,195,58,183,238,4,43,155,237,0,74,159,237,0,0,0,234,0,0,200,66,196,74,183,238,4,59,35,238
 	.byte 67,43,50,238,194,11,183,238,5,10,138,237,0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 88
-	.byte 0,0,159,231,0,0,139,229,5,10,154,237,192,42,183,238,2,43,139,237,0,0,159,229,0,0,0,234
 	.long mono_aot_Assembly_CSharp_got - . + 92
+	.byte 0,0,159,231,0,0,139,229,5,10,154,237,192,42,183,238,2,43,139,237,0,0,159,229,0,0,0,234
+	.long mono_aot_Assembly_CSharp_got - . + 96
 	.byte 0,0,159,231
 bl p_41
 
@@ -738,7 +742,7 @@ _m_1b:
 
 	.byte 13,192,160,225,128,64,45,233,13,112,160,225,32,93,45,233,64,208,77,226,13,176,160,225,48,0,139,229,1,160,160,225
 	.byte 0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 68
+	.long mono_aot_Assembly_CSharp_got - . + 72
 	.byte 0,0,159,231,56,0,139,229,10,0,160,225,0,224,154,229
 bl p_36
 
@@ -756,12 +760,12 @@ bl p_36
 bl p_37
 
 	.byte 0,32,160,225,0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 96
+	.long mono_aot_Assembly_CSharp_got - . + 100
 	.byte 1,16,159,231,2,0,160,225,0,224,146,229
 bl p_38
 
 	.byte 0,0,80,227,102,0,0,10,0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 100
+	.long mono_aot_Assembly_CSharp_got - . + 104
 	.byte 0,0,159,231
 bl p_22
 
@@ -769,7 +773,7 @@ bl p_22
 bl p_36
 
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 104
+	.long mono_aot_Assembly_CSharp_got - . + 108
 	.byte 1,16,159,231,0,224,144,229,1,128,160,225
 bl p_43
 
@@ -841,7 +845,7 @@ bl p_44
 bl p_45
 
 	.byte 0,0,159,229,0,0,0,234
-	.long mono_aot_Assembly_CSharp_got - . + 108
+	.long mono_aot_Assembly_CSharp_got - . + 112
 	.byte 0,0,159,231,0,0,144,229,0,0,80,227,10,0,0,26,16,32,139,226,0,192,146,229,4,224,146,229,0,192,142,229
 	.byte 104,208,130,226,240,175,157,232,150,0,160,227,6,12,128,226,2,4,128,226
 bl p_46
@@ -978,7 +982,7 @@ Lm_d_p:
 	.byte 0,2,9,10
 Lm_e_p:
 
-	.byte 0,9,11,10,12,13,14,12,15,16,17
+	.byte 0,10,11,10,12,13,14,15,12,16,17,18
 Lm_f_p:
 
 	.byte 0,0
@@ -987,13 +991,13 @@ Lm_10_p:
 	.byte 0,0
 Lm_11_p:
 
-	.byte 0,1,18
+	.byte 0,1,19
 Lm_12_p:
 
-	.byte 0,1,18
+	.byte 0,1,19
 Lm_13_p:
 
-	.byte 0,1,19
+	.byte 0,1,20
 Lm_14_p:
 
 	.byte 0,0
@@ -1002,22 +1006,22 @@ Lm_15_p:
 	.byte 0,0
 Lm_16_p:
 
-	.byte 0,5,20,21,22,23,4
+	.byte 0,5,21,22,23,24,4
 Lm_17_p:
 
 	.byte 0,0
 Lm_18_p:
 
-	.byte 0,1,24
+	.byte 0,1,25
 Lm_19_p:
 
 	.byte 0,0
 Lm_1a_p:
 
-	.byte 0,3,25,26,4
+	.byte 0,3,26,27,4
 Lm_1b_p:
 
-	.byte 0,5,20,27,28,29,4
+	.byte 0,5,21,28,29,30,4
 Lm_1c_p:
 
 	.byte 0,1,4
@@ -1026,7 +1030,7 @@ Lm_1d_p:
 	.byte 0,0
 Lm_1f_p:
 
-	.byte 0,1,30
+	.byte 0,1,31
 .text
 	.align 3
 method_info_offsets:
@@ -1085,29 +1089,29 @@ got_info:
 
 	.byte 12,0,39,17,0,1,17,0,17,34,255,255,0,0,0,0,255,43,0,0,1,17,0,33,17,0,73,17,0,77,17,0
 	.byte 87,17,0,128,133,17,0,128,145,17,0,128,169,16,28,2,42,17,0,128,185,17,0,128,209,17,0,128,219,17,0,128
-	.byte 237,17,0,129,9,34,255,255,0,0,0,0,255,43,0,0,2,17,0,129,31,17,0,129,43,17,0,129,65,17,0,129
-	.byte 79,34,255,255,0,0,0,0,255,43,0,0,3,17,0,129,95,17,0,129,109,14,31,2,17,0,129,133,17,0,129,149
-	.byte 34,255,255,0,0,0,0,255,43,0,0,4,33,3,193,0,13,173,3,193,0,14,89,3,193,0,15,1,3,193,0,13
-	.byte 254,3,193,0,9,113,3,193,0,7,239,3,193,0,15,2,3,193,0,15,39,3,255,255,0,0,0,0,255,43,0,0
-	.byte 1,3,193,0,14,85,3,193,0,17,182,3,193,0,8,27,3,193,0,15,97,3,193,0,8,40,3,193,0,15,38,3
-	.byte 193,0,14,10,3,193,0,12,144,3,194,0,61,75,3,194,0,61,147,3,194,0,2,81,3,193,0,12,137,3,193,0
-	.byte 13,192,3,193,0,12,191,3,194,0,2,79,3,193,0,14,90,3,18,3,193,0,8,61,3,195,0,1,149,3,19,3
-	.byte 193,0,14,15,3,193,0,14,32,3,193,0,8,31,3,193,0,15,43,3,255,255,0,0,0,0,255,43,0,0,2,3
-	.byte 193,0,17,184,3,193,0,19,185,3,193,0,14,220,3,194,0,1,217,3,255,255,0,0,0,0,255,43,0,0,3,3
-	.byte 193,0,17,188,7,27,109,111,110,111,95,111,98,106,101,99,116,95,110,101,119,95,112,116,114,102,114,101,101,95,98,111
-	.byte 120,0,3,194,0,2,76,3,255,255,0,0,0,0,255,43,0,0,4,7,17,109,111,110,111,95,103,101,116,95,108,109
-	.byte 102,95,97,100,100,114,0,31,255,254,0,0,0,41,2,2,198,0,4,3,0,1,1,2,2,7,30,109,111,110,111,95
-	.byte 99,114,101,97,116,101,95,99,111,114,108,105,98,95,101,120,99,101,112,116,105,111,110,95,48,0,7,25,109,111,110,111
-	.byte 95,97,114,99,104,95,116,104,114,111,119,95,101,120,99,101,112,116,105,111,110,0,7,35,109,111,110,111,95,116,104,114
-	.byte 101,97,100,95,105,110,116,101,114,114,117,112,116,105,111,110,95,99,104,101,99,107,112,111,105,110,116,0
+	.byte 231,17,0,128,249,17,0,129,21,34,255,255,0,0,0,0,255,43,0,0,2,17,0,129,43,17,0,129,55,17,0,129
+	.byte 77,17,0,129,91,34,255,255,0,0,0,0,255,43,0,0,3,17,0,129,107,17,0,129,121,14,31,2,17,0,129,145
+	.byte 17,0,129,161,34,255,255,0,0,0,0,255,43,0,0,4,33,3,193,0,13,173,3,193,0,14,89,3,193,0,15,1
+	.byte 3,193,0,13,254,3,193,0,9,113,3,193,0,7,239,3,193,0,15,2,3,193,0,15,39,3,255,255,0,0,0,0
+	.byte 255,43,0,0,1,3,193,0,14,85,3,193,0,17,182,3,193,0,8,27,3,193,0,15,97,3,193,0,8,40,3,193
+	.byte 0,15,38,3,193,0,14,10,3,193,0,12,144,3,194,0,61,75,3,194,0,61,147,3,194,0,2,81,3,193,0,12
+	.byte 137,3,193,0,13,192,3,193,0,12,191,3,194,0,2,79,3,193,0,14,90,3,18,3,193,0,8,61,3,195,0,1
+	.byte 149,3,19,3,193,0,14,15,3,193,0,14,32,3,193,0,8,31,3,193,0,15,43,3,255,255,0,0,0,0,255,43
+	.byte 0,0,2,3,193,0,17,184,3,193,0,19,185,3,193,0,14,220,3,194,0,1,217,3,255,255,0,0,0,0,255,43
+	.byte 0,0,3,3,193,0,17,188,7,27,109,111,110,111,95,111,98,106,101,99,116,95,110,101,119,95,112,116,114,102,114,101
+	.byte 101,95,98,111,120,0,3,194,0,2,76,3,255,255,0,0,0,0,255,43,0,0,4,7,17,109,111,110,111,95,103,101
+	.byte 116,95,108,109,102,95,97,100,100,114,0,31,255,254,0,0,0,41,2,2,198,0,4,3,0,1,1,2,2,7,30,109
+	.byte 111,110,111,95,99,114,101,97,116,101,95,99,111,114,108,105,98,95,101,120,99,101,112,116,105,111,110,95,48,0,7,25
+	.byte 109,111,110,111,95,97,114,99,104,95,116,104,114,111,119,95,101,120,99,101,112,116,105,111,110,0,7,35,109,111,110,111
+	.byte 95,116,104,114,101,97,100,95,105,110,116,101,114,114,117,112,116,105,111,110,95,99,104,101,99,107,112,111,105,110,116,0
 .text
 	.align 3
 got_info_offsets:
 
 	.long 0,2,3,6,9,21,24,27
 	.long 30,33,37,41,45,49,53,57
-	.long 61,65,69,81,85,89,93,97
-	.long 109,113,117,120,124,128,140
+	.long 61,65,69,73,85,89,93,97
+	.long 101,113,117,121,124,128,132,144
 .text
 	.align 3
 ex_info:
@@ -1156,7 +1160,7 @@ Le_d_p:
 	.byte 129,132,2,83,0
 Le_e_p:
 
-	.byte 134,124,2,128,193,0
+	.byte 134,204,2,128,193,0
 Le_f_p:
 
 	.byte 120,2,128,222,0
@@ -1278,247 +1282,247 @@ plt:
 mono_aot_Assembly_CSharp_plt:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 120,0
+	.long mono_aot_Assembly_CSharp_got - . + 124,0
 p_1:
 plt_UnityEngine_MonoBehaviour__ctor:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 124,141
+	.long mono_aot_Assembly_CSharp_got - . + 128,145
 p_2:
 plt_UnityEngine_Component_get_transform:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 128,146
+	.long mono_aot_Assembly_CSharp_got - . + 132,150
 p_3:
 plt_UnityEngine_Transform_get_localEulerAngles:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 132,151
+	.long mono_aot_Assembly_CSharp_got - . + 136,155
 p_4:
 plt_UnityEngine_Input_GetAxis_string:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 136,156
+	.long mono_aot_Assembly_CSharp_got - . + 140,160
 p_5:
 plt_UnityEngine_Mathf_Clamp_single_single_single:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 140,161
+	.long mono_aot_Assembly_CSharp_got - . + 144,165
 p_6:
 plt_UnityEngine_Vector3__ctor_single_single_single:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 144,166
+	.long mono_aot_Assembly_CSharp_got - . + 148,170
 p_7:
 plt_UnityEngine_Transform_set_localEulerAngles_UnityEngine_Vector3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 148,171
+	.long mono_aot_Assembly_CSharp_got - . + 152,175
 p_8:
 plt_UnityEngine_Transform_Rotate_single_single_single:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 152,176
+	.long mono_aot_Assembly_CSharp_got - . + 156,180
 p_9:
 plt_UnityEngine_Component_GetComponent_UnityEngine_Rigidbody:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 156,181
+	.long mono_aot_Assembly_CSharp_got - . + 160,185
 p_10:
 plt_UnityEngine_Object_op_Implicit_UnityEngine_Object:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 160,193
+	.long mono_aot_Assembly_CSharp_got - . + 164,197
 p_11:
 plt_UnityEngine_Rigidbody_set_freezeRotation_bool:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 164,198
+	.long mono_aot_Assembly_CSharp_got - . + 168,202
 p_12:
 plt_UnityEngine_Vector3_get_zero:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 168,203
+	.long mono_aot_Assembly_CSharp_got - . + 172,207
 p_13:
 plt_UnityEngine_Time_get_deltaTime:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 172,208
+	.long mono_aot_Assembly_CSharp_got - . + 176,212
 p_14:
 plt_UnityEngine_Vector3_op_Multiply_UnityEngine_Vector3_single:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 176,213
+	.long mono_aot_Assembly_CSharp_got - . + 180,217
 p_15:
 plt_UnityEngine_Transform_Rotate_UnityEngine_Vector3_UnityEngine_Space:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 180,218
+	.long mono_aot_Assembly_CSharp_got - . + 184,222
 p_16:
 plt_UnityEngine_Input_GetKeyDown_UnityEngine_KeyCode:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 184,223
+	.long mono_aot_Assembly_CSharp_got - . + 188,227
 p_17:
 plt_UnityEngine_Application_get_dataPath:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 188,228
+	.long mono_aot_Assembly_CSharp_got - . + 192,232
 p_18:
 plt_System_DateTime_get_Now:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 192,233
+	.long mono_aot_Assembly_CSharp_got - . + 196,237
 p_19:
 plt_System_DateTime_ToString_string:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 196,238
+	.long mono_aot_Assembly_CSharp_got - . + 200,242
 p_20:
 plt_string_Concat_string_string_string_string:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 200,243
+	.long mono_aot_Assembly_CSharp_got - . + 204,247
 p_21:
 plt_UnityEngine_Application_CaptureScreenshot_string:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 204,248
+	.long mono_aot_Assembly_CSharp_got - . + 208,252
 p_22:
 plt_UnityEngine_MonoBehaviour_print_object:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 208,253
+	.long mono_aot_Assembly_CSharp_got - . + 212,257
 p_23:
 plt_UnityEngine_Behaviour_set_enabled_bool:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 212,258
+	.long mono_aot_Assembly_CSharp_got - . + 216,262
 p_24:
 plt_string_Concat_string_string:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 216,263
+	.long mono_aot_Assembly_CSharp_got - . + 220,267
 p_25:
 plt_UnityEngine_Component_get_gameObject:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 220,268
+	.long mono_aot_Assembly_CSharp_got - . + 224,272
 p_26:
 plt_GameController_freezeRotationY_UnityEngine_GameObject:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 224,273
+	.long mono_aot_Assembly_CSharp_got - . + 228,277
 p_27:
 plt_UnityEngine_Color_get_cyan:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 228,275
+	.long mono_aot_Assembly_CSharp_got - . + 232,279
 p_28:
 plt_UnityEngine_UI_Graphic_set_color_UnityEngine_Color:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 232,280
+	.long mono_aot_Assembly_CSharp_got - . + 236,284
 p_29:
 plt_GameController_releaseFreezeRotationY_UnityEngine_GameObject:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 236,285
+	.long mono_aot_Assembly_CSharp_got - . + 240,289
 p_30:
 plt_UnityEngine_Input_GetMouseButtonDown_int:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 240,287
+	.long mono_aot_Assembly_CSharp_got - . + 244,291
 p_31:
 plt_UnityEngine_Input_get_touchCount:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 244,292
+	.long mono_aot_Assembly_CSharp_got - . + 248,296
 p_32:
 plt_UnityEngine_Vector3_get_up:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 248,297
+	.long mono_aot_Assembly_CSharp_got - . + 252,301
 p_33:
 plt_UnityEngine_Transform_Rotate_UnityEngine_Vector3_single:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 252,302
+	.long mono_aot_Assembly_CSharp_got - . + 256,306
 p_34:
 plt_UnityEngine_GameObject_GetComponent_UnityEngine_Rigidbody:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 256,307
+	.long mono_aot_Assembly_CSharp_got - . + 260,311
 p_35:
 plt_UnityEngine_Rigidbody_set_constraints_UnityEngine_RigidbodyConstraints:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 260,319
+	.long mono_aot_Assembly_CSharp_got - . + 264,323
 p_36:
 plt_UnityEngine_Collision_get_gameObject:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 264,324
+	.long mono_aot_Assembly_CSharp_got - . + 268,328
 p_37:
 plt_UnityEngine_GameObject_get_tag:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 268,329
+	.long mono_aot_Assembly_CSharp_got - . + 272,333
 p_38:
 plt_string_Equals_string:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 272,334
+	.long mono_aot_Assembly_CSharp_got - . + 276,338
 p_39:
 plt_UnityEngine_GameObject_GetComponent_Player:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 276,339
+	.long mono_aot_Assembly_CSharp_got - . + 280,343
 p_40:
 plt_UnityEngine_Rigidbody_AddForce_UnityEngine_Vector3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 280,351
+	.long mono_aot_Assembly_CSharp_got - . + 284,355
 p_41:
 plt__jit_icall_mono_object_new_ptrfree_box:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 284,356
+	.long mono_aot_Assembly_CSharp_got - . + 288,360
 p_42:
 plt_string_Concat_object_object:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 288,386
+	.long mono_aot_Assembly_CSharp_got - . + 292,390
 p_43:
 plt_UnityEngine_GameObject_GetComponent_Monster:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 292,391
+	.long mono_aot_Assembly_CSharp_got - . + 296,395
 p_44:
 plt__jit_icall_mono_get_lmf_addr:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 296,403
+	.long mono_aot_Assembly_CSharp_got - . + 300,407
 p_45:
 plt__icall_native_System_Array_GetGenericValueImpl_object_int_object_:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 300,423
+	.long mono_aot_Assembly_CSharp_got - . + 304,427
 p_46:
 plt__jit_icall_mono_create_corlib_exception_0:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 304,441
+	.long mono_aot_Assembly_CSharp_got - . + 308,445
 p_47:
 plt__jit_icall_mono_arch_throw_exception:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 308,474
+	.long mono_aot_Assembly_CSharp_got - . + 312,478
 p_48:
 plt__jit_icall_mono_thread_interruption_checkpoint:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Assembly_CSharp_got - . + 312,502
+	.long mono_aot_Assembly_CSharp_got - . + 316,506
 plt_end:
 .text
 	.align 3
@@ -1526,7 +1530,7 @@ mono_image_table:
 
 	.long 4
 	.asciz "Assembly-CSharp"
-	.asciz "A3DF6D04-0876-4B1B-A709-589BE7C83935"
+	.asciz "15655F11-791B-4E93-9CDC-FB88832B1D60"
 	.asciz ""
 	.asciz ""
 	.align 3
@@ -1556,7 +1560,7 @@ mono_image_table:
 .data
 	.align 3
 mono_aot_Assembly_CSharp_got:
-	.space 320
+	.space 324
 got_end:
 .data
 	.align 3
@@ -1567,12 +1571,12 @@ mono_aot_got_addr:
 	.align 3
 mono_aot_file_info:
 
-	.long 31,320,49,32,1024,1024,128,0
+	.long 32,324,49,32,1024,1024,128,0
 	.long 0,0,0,0,0
 .text
 	.align 2
 mono_assembly_guid:
-	.asciz "A3DF6D04-0876-4B1B-A709-589BE7C83935"
+	.asciz "15655F11-791B-4E93-9CDC-FB88832B1D60"
 .text
 	.align 2
 mono_aot_version:

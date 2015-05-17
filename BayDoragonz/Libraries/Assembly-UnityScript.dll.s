@@ -4707,7 +4707,7 @@ mono_image_table:
 
 	.long 5
 	.asciz "Assembly-UnityScript"
-	.asciz "046C4C8A-A14F-4F15-8E19-639A9CF8562A"
+	.asciz "DBD8DF30-4116-4F52-9AAF-9A053D13CC23"
 	.asciz ""
 	.asciz ""
 	.align 3
@@ -4760,7 +4760,7 @@ mono_aot_file_info:
 .text
 	.align 2
 mono_assembly_guid:
-	.asciz "046C4C8A-A14F-4F15-8E19-639A9CF8562A"
+	.asciz "DBD8DF30-4116-4F52-9AAF-9A053D13CC23"
 .text
 	.align 2
 mono_aot_version:

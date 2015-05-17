@@ -4,7 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public string name = "homura";
-	public float  turmPower = 5000;
+	public float  turmPower = 5000f;
+	public float  magicPower = 300f;
 	
 	float attackConunt = 0f;
 
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void attackAction() {
+		magicPower -= 20f;
 		attackConunt = 2.0f;
 		GetComponent<Rigidbody>().AddForce(new Vector3(1500,0,1500));
 	}

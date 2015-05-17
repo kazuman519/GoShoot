@@ -17,13 +17,17 @@ public class GameController : MonoBehaviour {
 	// roll canvas
 	public Text headerTitle;
 	public Text rollNum;
-	// battle canvas
 	public Text centerTitle;
+	 
+	// battle canvas
+	public Text hpValue;
+	public Text spValue;
 	 
 	float rollReadyTimeCount;
 	float rollTimeCount;
 	float battleReadyTimeCount;
 	float battleTimeCount;
+	int rollCount;
 	bool isRollReadyTurn;
 	bool isRollTurn;
 	bool isBattleReadyTurn;
@@ -46,6 +50,7 @@ public class GameController : MonoBehaviour {
 		rollReadyTimeCount = 3.0f;
 		rollTimeCount = 5.0f;
 		battleReadyTimeCount = 3.0f;
+		rollCount = 0;
 		isRollReadyTurn = true;
 		isRollTurn = false;
 		isBattleReadyTurn = false;
@@ -70,19 +75,21 @@ public class GameController : MonoBehaviour {
 			}
 		} else if (isRollTurn) {
 			rollTimeCount -= Time.deltaTime;
+			rollNum.text = "Roll:"+rollCount;
 
-			if (rollTimeCount <= -1.5f) {
+			if (rollTimeCount <= -2.5f) {
 				centerTitle.text = "";
 
 				// change flag
 				isRollTurn = false;
 				isBattleReadyTurn = true;
-			} else if (rollTimeCount <= 0f) {
-				// 巻くのが終わった時のアクション
+			} else if (rollTimeCount <= -1.0f) {
 				headerTitle.text = "合図と共に紐を引け!!";
 				centerTitle.text = "next";
 				centerTitle.color = Color.cyan;
 				changeCmera (subCamera);
+			} else if (rollTimeCount <= 0f) {
+				centerTitle.text = "End!!";
 			} else if (rollTimeCount <= 2.75f) {
 				centerTitle.text = "";
 			}
@@ -100,8 +107,14 @@ public class GameController : MonoBehaviour {
 			}
 		}
 
+		// HP & SP
+		if (player.turmPower > 0) {
+			hpValue.text = player.turmPower.ToString ("F0");
+			spValue.text = player.magicPower.ToString ("F0");
+		} else {
+			hpValue.text = "0";
+		}
 
-		// Turn check
 
 		// KeyDown
 		if (Input.GetKeyDown (KeyCode.Space)) {

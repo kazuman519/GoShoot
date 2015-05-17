@@ -35,7 +35,7 @@ public class Monster : MonoBehaviour {
 				attackPower *= 2;
 			}
 			player.GetComponent<Rigidbody>().AddForce(new Vector3(1500,attackPower,1500));
-			player.turmPower -= attackPower/50;
+			player.turmPower -= attackPower/10;
 		} 	
 	}
 
