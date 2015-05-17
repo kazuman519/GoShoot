@@ -137,6 +137,9 @@ public class GameController : MonoBehaviour {
 			if (isRollTurn) {
 
 			} else if (isBattleStart) {
+				player.ropePowerParticle.SetActive(false);
+				player.ropeBox.SetActive(false);
+
 				releaseFreezeRotationY (player.gameObject);
 				releaseFreezeRotationY (monster.gameObject);
 

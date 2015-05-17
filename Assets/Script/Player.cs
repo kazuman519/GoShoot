@@ -6,8 +6,13 @@ public class Player : MonoBehaviour {
 	public string name = "homura";
 	public float  turmPower = 5000f;
 	public float  magicPower = 300f;
-	
+
+	public GameObject ropeBox;
+	public GameObject ropePowerParticle;
+	public GameObject magicWindParticle;
+
 	float attackConunt = 0f;
+	float magicCount = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +26,13 @@ public class Player : MonoBehaviour {
 
 		if (attackConunt > 0) {
 			attackConunt-= Time.deltaTime;
+		}
+
+		if (magicCount > 0) {
+			magicCount -= Time.deltaTime;
+		} else if (magicCount < 0) {
+			magicCount = 0;
+			magicWindParticle.SetActive(false);
 		}
 
 		if (turmPower <= 0) {
@@ -38,6 +50,9 @@ public class Player : MonoBehaviour {
 			if (attackConunt > 0) {
 				attackPower *= 2;
 			}
+			if (magicCount > 0) {
+				attackPower *= 3;
+			}
 			monster.GetComponent<Rigidbody>().AddForce(new Vector3(1500,attackPower,1500));
 			monster.turmPower -= attackPower/50;
 		}
@@ -50,6 +65,10 @@ public class Player : MonoBehaviour {
 	}
 		
 	public void magicWind() {
+		magicPower -= 150;
+		magicWindParticle.SetActive (true);
+		magicCount = 4.5f;
 	}
+
 
 }
