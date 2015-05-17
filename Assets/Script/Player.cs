@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public string name = "homura";
-	public float  turmPower = 3000;
+	public float  turmPower = 5000;
 	
 	float attackConunt = 0f;
 

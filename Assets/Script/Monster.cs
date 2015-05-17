@@ -6,7 +6,7 @@ public class Monster : MonoBehaviour {
 	public string name = "slime";
 	public float  turmPower = 4000;
 	
-	float attackConunt = 3.0f;
+	float attackConunt = 0f;
 
 	// Use this for initialization
 	void Start () {
