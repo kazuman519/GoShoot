@@ -15,4 +15,14 @@ public class Monster : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnCollisionEnter(Collision col){
+		print("col_enter:"+col.gameObject.tag); 
+		
+		if (col.gameObject.tag.Equals("Player")) {
+			print ("プレイヤーです");
+			col.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(1500,5000,1500));
+		} 
+		
+	}
 }
