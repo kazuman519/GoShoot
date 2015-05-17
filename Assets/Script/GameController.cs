@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour {
 	public Monster monster;
 
 	public Camera mainCamera;
-	public Camera charactorCamera;
+	public Camera subCamera;
+	public Camera playerCamera;
 
 	public Canvas rollCanvas;
 	public Canvas battleCanvas;
@@ -36,8 +37,7 @@ public class GameController : MonoBehaviour {
 		freezeRotationY (monster.gameObject);
 
 		// public init
-		mainCamera.enabled =  false;
-		charactorCamera.enabled = true;
+		changeCmera (playerCamera);
 		changeCanvas(rollCanvas);
 		centerTitle.text = "Roll Ready?";
 
@@ -80,6 +80,7 @@ public class GameController : MonoBehaviour {
 				// 巻くのが終わった時のアクション
 				centerTitle.text = "next";
 				centerTitle.color = Color.cyan;
+				changeCmera (subCamera);
 			} else if (rollTimeCount <= 2.75f) {
 				centerTitle.text = "";
 			}
@@ -111,8 +112,8 @@ public class GameController : MonoBehaviour {
 				isBattleTurn = true;
 			}
 		}
-		/*
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0)
+		    || Input.touchCount > 0) {
 			print ("downsitayo");
 //			Touch touch = Input.GetTouch(0);
 //			Vector2 touchPosition = new Vector2(touch.position.x, Screen.height - touch.position.y);
@@ -123,13 +124,12 @@ public class GameController : MonoBehaviour {
 			} else if (isBattleStart) {
 				releaseFreezeRotationY (player.gameObject);
 				releaseFreezeRotationY (monster.gameObject);
-				
+
 				// change flag
 				isBattleStart = false;
 				isBattleTurn = true;
 			}
 		}
-		*/
 
 		// Action
 		if (isBattleTurn) {
@@ -139,14 +139,22 @@ public class GameController : MonoBehaviour {
 			player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
 			monster.transform.Rotate (Vector3.up, monster.turmPower * Time.deltaTime);
 
-			if (!mainCamera.enabled && battleTimeCount >= 0.25f) {
+			if (battleTimeCount >= 0.5f) {
+				// change canvas&camera
 				changeCanvas(battleCanvas);
-				mainCamera.enabled =  true;
-				charactorCamera.enabled = false;
+				changeCmera (mainCamera);
 			}
 		}
 	}
 	
+
+	void changeCmera(Camera camera) {
+		mainCamera.enabled = false;
+		subCamera.enabled = false;
+		playerCamera.enabled = false;
+		
+		camera.enabled = true;
+	}
 
 	void changeCanvas(Canvas canvas) {
 		rollCanvas.enabled = false;
