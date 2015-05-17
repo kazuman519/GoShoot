@@ -46,4 +46,8 @@ public class Player : MonoBehaviour {
 		attackConunt = 2.0f;
 		GetComponent<Rigidbody>().AddForce(new Vector3(1500,0,1500));
 	}
+		
+	public void magicWind() {
+	}
+
 }

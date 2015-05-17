@@ -54,7 +54,14 @@
      <Compile Include="Assets\AssetStore\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
      <Compile Include="Assets\AssetStore\charactor\Script\CharaView.js" />
      <None Include="Assets\AssetStore\Medieval_House\Info.txt" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Particle AddSmooth.shader" />
      <None Include="Assets\AssetStore\charactor\Shader\WrapLambert.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Particle Rim AddSmooth.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Reflective Alpha.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Docs\Readme.txt" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Particle Rim AddSmooth 2S.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Reflective Add.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Unlit Color.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

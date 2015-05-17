@@ -47,13 +47,21 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AssetStore\Medieval_House\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\AssetStore\ParticleFX03\_Scripts\Rotating.cs" />
      <Compile Include="Assets\AssetStore\charactor\Script\ScreenShot.cs" />
      <Compile Include="Assets\Script\CameraController.cs" />
      <Compile Include="Assets\Script\GameController.cs" />
      <Compile Include="Assets\Script\Monster.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <None Include="Assets\AssetStore\Medieval_House\Info.txt" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Particle AddSmooth.shader" />
      <None Include="Assets\AssetStore\charactor\Shader\WrapLambert.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Particle Rim AddSmooth.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Reflective Alpha.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Docs\Readme.txt" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Particle Rim AddSmooth 2S.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Reflective Add.shader" />
+     <None Include="Assets\AssetStore\ParticleFX03\_Shaders\NW_Unlit Color.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
