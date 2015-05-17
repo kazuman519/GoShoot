@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
 	public Canvas battleCanvas;
 
 	// roll canvas
+	public Text headerTitle;
 	public Text rollNum;
 	// battle canvas
 	public Text centerTitle;
@@ -78,6 +79,7 @@ public class GameController : MonoBehaviour {
 				isBattleReadyTurn = true;
 			} else if (rollTimeCount <= 0f) {
 				// 巻くのが終わった時のアクション
+				headerTitle.text = "合図と共に紐を引け!!";
 				centerTitle.text = "next";
 				centerTitle.color = Color.cyan;
 				changeCmera (subCamera);
@@ -103,14 +105,14 @@ public class GameController : MonoBehaviour {
 
 		// KeyDown
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (isBattleStart) {
-				releaseFreezeRotationY (player.gameObject);
-				releaseFreezeRotationY (monster.gameObject);
-
-				// change flag
-				isBattleStart = false;
-				isBattleTurn = true;
-			}
+			releaseFreezeRotationY (player.gameObject);
+			releaseFreezeRotationY (monster.gameObject);
+			
+			// change flag
+			isBattleStart = false;
+			isBattleTurn = true;
+			changeCanvas(battleCanvas);
+			changeCmera (mainCamera);
 		}
 		if (Input.GetMouseButtonDown(0)
 		    || Input.touchCount > 0) {
@@ -135,9 +137,12 @@ public class GameController : MonoBehaviour {
 		if (isBattleTurn) {
 			// バトルタイムカウントは増えてく
 			battleTimeCount += Time.deltaTime;
-
-			player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
-			monster.transform.Rotate (Vector3.up, monster.turmPower * Time.deltaTime);
+			if (player.turmPower > 0) {
+				player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
+			}
+			if (monster.turmPower > 0) {
+				monster.transform.Rotate (Vector3.up, monster.turmPower * Time.deltaTime);
+			}
 
 			if (battleTimeCount >= 0.5f) {
 				// change canvas&camera

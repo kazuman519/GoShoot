@@ -4,7 +4,9 @@ using System.Collections;
 public class Monster : MonoBehaviour {
 
 	public string name = "slime";
-	public float  turmPower = 1000;
+	public float  turmPower = 4000;
+	
+	float attackConunt = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +15,11 @@ public class Monster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		turmPower -= Time.deltaTime * 10;
+
+		if (attackConunt > 0) {
+			attackConunt-= Time.deltaTime;
+		}
 	}
 
 	void OnCollisionEnter(Collision col){
@@ -21,8 +27,19 @@ public class Monster : MonoBehaviour {
 		
 		if (col.gameObject.tag.Equals("Player")) {
 			print ("プレイヤーです");
-			col.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(1500,5000,1500));
-		} 
-		
+
+			Player player = col.gameObject.GetComponent<Player>();
+
+			float attackPower = 5000;
+			if (attackConunt > 0) {
+				attackPower *= 2;
+			}
+			player.GetComponent<Rigidbody>().AddForce(new Vector3(1500,attackPower,1500));
+			player.turmPower -= attackPower/50;
+		} 	
+	}
+
+	public void attackAction() {
+		attackConunt = 3.0f;
 	}
 }
