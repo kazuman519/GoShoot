@@ -7,6 +7,9 @@ public class GameController : MonoBehaviour {
 	public Player player;
 	public Monster monster;
 
+	public Camera mainCamera;
+	public Camera charactorCamera;
+
 	public Canvas rollCanvas;
 	public Canvas battleCanvas;
 
@@ -24,13 +27,17 @@ public class GameController : MonoBehaviour {
 	bool isBattleReadyTurn;
 	bool isBattleStart;
 	bool isBattleTurn;
-
+	Color defaultCentetTitleColor;
+	
 	// Use this for initialization
 	void Start () {
 		print ("name:"+player.name);
-		freezeRotationY (player);
+		freezeRotationY (player.gameObject);
+		freezeRotationY (monster.gameObject);
 
 		// public init
+		mainCamera.enabled =  false;
+		charactorCamera.enabled = true;
 		changeCanvas(rollCanvas);
 		centerTitle.text = "Roll Ready?";
 
@@ -43,6 +50,7 @@ public class GameController : MonoBehaviour {
 		isBattleReadyTurn = false;
 		isBattleTurn = false;
 		isBattleStart = false;
+		defaultCentetTitleColor = centerTitle.color;
 	}
 	
 	// Update is called once per frame
@@ -72,7 +80,6 @@ public class GameController : MonoBehaviour {
 				// 巻くのが終わった時のアクション
 				centerTitle.text = "next";
 				centerTitle.color = Color.cyan;
-
 			} else if (rollTimeCount <= 2.75f) {
 				centerTitle.text = "";
 			}
@@ -86,6 +93,7 @@ public class GameController : MonoBehaviour {
 				isBattleStart = true;
 			} else if (battleReadyTimeCount <= 3.0f) {
 				centerTitle.text = "Battle Ready?";
+				centerTitle.color = defaultCentetTitleColor;
 			}
 		}
 
@@ -95,13 +103,33 @@ public class GameController : MonoBehaviour {
 		// KeyDown
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (isBattleStart) {
-				playerShoot();
+				releaseFreezeRotationY (player.gameObject);
+				releaseFreezeRotationY (monster.gameObject);
 
 				// change flag
 				isBattleStart = false;
 				isBattleTurn = true;
 			}
 		}
+		/*
+		if (Input.GetMouseButtonDown(0)) {
+			print ("downsitayo");
+//			Touch touch = Input.GetTouch(0);
+//			Vector2 touchPosition = new Vector2(touch.position.x, Screen.height - touch.position.y);
+//			print ("touch pos x:"+touchPosition.x+", y:"+touchPosition.y);
+
+			if (isRollTurn) {
+
+			} else if (isBattleStart) {
+				releaseFreezeRotationY (player.gameObject);
+				releaseFreezeRotationY (monster.gameObject);
+				
+				// change flag
+				isBattleStart = false;
+				isBattleTurn = true;
+			}
+		}
+		*/
 
 		// Action
 		if (isBattleTurn) {
@@ -111,11 +139,14 @@ public class GameController : MonoBehaviour {
 			player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
 			monster.transform.Rotate (Vector3.up, monster.turmPower * Time.deltaTime);
 
-			if (battleTimeCount >= 1.0f) {
+			if (!mainCamera.enabled && battleTimeCount >= 0.25f) {
 				changeCanvas(battleCanvas);
+				mainCamera.enabled =  true;
+				charactorCamera.enabled = false;
 			}
 		}
 	}
+	
 
 	void changeCanvas(Canvas canvas) {
 		rollCanvas.enabled = false;
@@ -124,18 +155,14 @@ public class GameController : MonoBehaviour {
 		canvas.enabled = true;
 	}
 
-	void playerShoot() {
-		releaseFreezeRotationY (player);
-	}
-
-	void freezeRotationY(Player gameObject) {
+	void freezeRotationY(GameObject gameObject) {
 		gameObject.GetComponent<Rigidbody>().constraints =
 			RigidbodyConstraints.FreezeRotationX |
 				RigidbodyConstraints.FreezeRotationZ |
 				RigidbodyConstraints.FreezePositionY;
 	}
 
-	void releaseFreezeRotationY(Player gameObject) {
+	void releaseFreezeRotationY(GameObject gameObject) {
 		gameObject.GetComponent<Rigidbody>().constraints =
 			RigidbodyConstraints.FreezeRotationX |
 				RigidbodyConstraints.FreezeRotationZ;

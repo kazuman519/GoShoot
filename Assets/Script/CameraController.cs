@@ -17,7 +17,8 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		/*
+		if (Input.GetMouseButtonDown(0)) {
 			if (mainCamera.enabled) {
 				mainCamera.enabled = false;
 				charactorCamera.enabled = true;
@@ -26,5 +27,6 @@ public class CameraController : MonoBehaviour {
 				charactorCamera.enabled = false;
 			}
 		}
+		*/
 	}
 }
