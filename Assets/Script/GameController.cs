@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour {
 	public Text headerTitle;
 	public Text rollNum;
 	public Text centerTitle;
+
+	public GameObject yarinaosiButton;
 	 
 	// battle canvas
 	public Text hpValue;
@@ -111,9 +113,11 @@ public class GameController : MonoBehaviour {
 		if (player.turmPower > 0) {
 			hpValue.text = player.turmPower.ToString ("F0");
 			spValue.text = player.magicPower.ToString ("F0");
+			yari
 		} else {
 			hpValue.text = "0";
 		}
+
 
 
 		// KeyDown
@@ -130,11 +134,17 @@ public class GameController : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)
 		    || Input.touchCount > 0) {
 			print ("downsitayo");
+
+
 //			Touch touch = Input.GetTouch(0);
 //			Vector2 touchPosition = new Vector2(touch.position.x, Screen.height - touch.position.y);
 //			print ("touch pos x:"+touchPosition.x+", y:"+touchPosition.y);
+//			headerTitle.text = "touch pos x:"+touchPosition.x+", y:"+touchPosition.y;
 
 			if (isRollTurn) {
+				//Vector3 vec =  new Vector3(touchPosition.x,touchPosition.y,player.ropeBox.transform.position.z);
+				//player.ropeBox.transform.position = playerCamera.ScreenToWorldPoint(vec);;
+
 
 			} else if (isBattleStart) {
 				player.ropePowerParticle.SetActive(false);
@@ -195,5 +205,9 @@ public class GameController : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().constraints =
 			RigidbodyConstraints.FreezeRotationX |
 				RigidbodyConstraints.FreezeRotationZ;
+	}
+
+	public void yarinaosi() {
+		Application.LoadLevel("GameScene");
 	}
 }

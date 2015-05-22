@@ -7,3 +7,10 @@ Cmd: compileSnippet
   api=9 type=1 insize=1706 outsize=7 kw=SOFTPARTICLES_OFF ok=1
 Cmd: compileSnippet
   api=14 type=1 insize=1706 outsize=1358 kw=SOFTPARTICLES_ON ok=1
+Cmd: compileSnippet
+  api=5 type=0 insize=1566 outsize=1900 kw=SOFTPARTICLES_ON ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1566 outsize=985 kw=SOFTPARTICLES_OFF ok=1
+End of pipe
+
+Quitting shader compiler process
