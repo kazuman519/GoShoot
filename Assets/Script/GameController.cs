@@ -7,19 +7,20 @@ public class GameController : MonoBehaviour {
 	public Player player;
 	public Monster monster;
 
-	public Camera mainCamera;
-	public Camera subCamera;
+	// Camera
+	public Camera MainCamera;
+	public Camera SubCamera;
 	public Camera playerCamera;
 
+	// Vamvas
 	public Canvas rollCanvas;
 	public Canvas battleCanvas;
 
-	// roll canvas
+	// component
 	public Text headerTitle;
 	public Text rollNum;
 	public Text centerTitle;
-
-	public GameObject yarinaosiButton;
+	public Button replayButton;
 	 
 	// battle canvas
 	public Text hpValue;
@@ -30,11 +31,17 @@ public class GameController : MonoBehaviour {
 	float battleReadyTimeCount;
 	float battleTimeCount;
 	int rollCount;
+
+	// game flag
 	bool isRollReadyTurn;
 	bool isRollTurn;
 	bool isBattleReadyTurn;
 	bool isBattleStart;
 	bool isBattleTurn;
+	bool isBatteleEnd;
+	bool isResultTurn;
+
+	// template color
 	Color defaultCentetTitleColor;
 	
 	// Use this for initialization
@@ -53,18 +60,28 @@ public class GameController : MonoBehaviour {
 		rollTimeCount = 5.0f;
 		battleReadyTimeCount = 3.0f;
 		rollCount = 0;
+
 		isRollReadyTurn = true;
 		isRollTurn = false;
 		isBattleReadyTurn = false;
 		isBattleTurn = false;
 		isBattleStart = false;
+		isBatteleEnd = false;
+		isResultTurn = false;
+
 		defaultCentetTitleColor = centerTitle.color;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// count
+		// ---------------------------------------------
+		// ターン制御 
+		// ---------------------------------------------
 		if (isRollReadyTurn) {
+			/*
+			 * ロールスタートのカウントターン
+			 */
+			print("RollReady Turn");
 			rollReadyTimeCount -= Time.deltaTime;
 			if (rollReadyTimeCount <= 0) {
 				centerTitle.text = "Start!!";
@@ -76,8 +93,12 @@ public class GameController : MonoBehaviour {
 				centerTitle.text = "Roll Ready?";
 			}
 		} else if (isRollTurn) {
+			/*
+			 * ロールターン
+			 */
+			print("Roll Turn");
 			rollTimeCount -= Time.deltaTime;
-			rollNum.text = "Roll:"+rollCount;
+			rollNum.text = "Roll:" + rollCount;
 
 			if (rollTimeCount <= -2.5f) {
 				centerTitle.text = "";
@@ -89,13 +110,17 @@ public class GameController : MonoBehaviour {
 				headerTitle.text = "合図と共に紐を引け!!";
 				centerTitle.text = "next";
 				centerTitle.color = Color.cyan;
-				changeCmera (subCamera);
+				changeCmera (SubCamera);
 			} else if (rollTimeCount <= 0f) {
 				centerTitle.text = "End!!";
 			} else if (rollTimeCount <= 2.75f) {
 				centerTitle.text = "";
 			}
 		} else if (isBattleReadyTurn) {
+			/*
+			 * バトルスタートのカウントターン
+			 */
+			print("ButtleReady Turn");
 			battleReadyTimeCount -= Time.deltaTime;
 			if (battleReadyTimeCount <= 0f) {
 				centerTitle.text = "Shoot!!!";
@@ -107,20 +132,59 @@ public class GameController : MonoBehaviour {
 				centerTitle.text = "Battle Ready?";
 				centerTitle.color = defaultCentetTitleColor;
 			}
+		} else if (isBattleTurn) {
+			/*
+			 * バトルターン
+			 */
+			print("Buttle Turn");
+			battleTimeCount += Time.deltaTime; // バトルタイムカウントは増えてく
+
+			// プレイヤーとモンスターを回す
+			if (player.turmPower > 0) {
+				player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
+			}
+			if (monster.turmPower > 0) { 
+				monster.transform.Rotate (Vector3.up, monster.turmPower * Time.deltaTime);
+			}
+
+			// Battle開始数秒後にフィールドのカメラに変える
+			if (battleTimeCount >= 0.5f) {
+				// change canvas&camera
+				changeCanvas (battleCanvas);
+				changeCmera (MainCamera);
+			}
+
+			// バトルが終わったかの管理
+			if (isBatteleEnd) {
+				print("Buttle End");
+				replayButton.gameObject.SetActive(true);
+
+				// change flag
+				isBatteleEnd = false;
+				isBattleTurn = false;
+				isResultTurn = true;
+			}
+		} else if (isResultTurn) {
+
 		}
 
-		// HP & SP
+		// ---------------------------------------------
+		// ステータス表示制御
+		// ---------------------------------------------
 		if (player.turmPower > 0) {
 			hpValue.text = player.turmPower.ToString ("F0");
 			spValue.text = player.magicPower.ToString ("F0");
-			yari
 		} else {
 			hpValue.text = "0";
+
+			// change flag
+			isBatteleEnd = true;
 		}
 
 
-
-		// KeyDown
+		// ---------------------------------------------
+		// コマンド制御
+		// ---------------------------------------------
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			releaseFreezeRotationY (player.gameObject);
 			releaseFreezeRotationY (monster.gameObject);
@@ -129,7 +193,7 @@ public class GameController : MonoBehaviour {
 			isBattleStart = false;
 			isBattleTurn = true;
 			changeCanvas(battleCanvas);
-			changeCmera (mainCamera);
+			changeCmera (MainCamera);
 		}
 		if (Input.GetMouseButtonDown(0)
 		    || Input.touchCount > 0) {
@@ -158,30 +222,12 @@ public class GameController : MonoBehaviour {
 				isBattleTurn = true;
 			}
 		}
-
-		// Action
-		if (isBattleTurn) {
-			// バトルタイムカウントは増えてく
-			battleTimeCount += Time.deltaTime;
-			if (player.turmPower > 0) {
-				player.transform.Rotate (Vector3.up, player.turmPower * Time.deltaTime);
-			}
-			if (monster.turmPower > 0) {
-				monster.transform.Rotate (Vector3.up, monster.turmPower * Time.deltaTime);
-			}
-
-			if (battleTimeCount >= 0.5f) {
-				// change canvas&camera
-				changeCanvas(battleCanvas);
-				changeCmera (mainCamera);
-			}
-		}
 	}
 	
 
 	void changeCmera(Camera camera) {
-		mainCamera.enabled = false;
-		subCamera.enabled = false;
+		MainCamera.enabled = false;
+		SubCamera.enabled = false;
 		playerCamera.enabled = false;
 		
 		camera.enabled = true;
@@ -207,7 +253,7 @@ public class GameController : MonoBehaviour {
 				RigidbodyConstraints.FreezeRotationZ;
 	}
 
-	public void yarinaosi() {
+	public void replayGame() {
 		Application.LoadLevel("GameScene");
 	}
 }

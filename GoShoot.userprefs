@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/GameController.cs">
     <Files>
-      <File FileName="Assets/Script/GameController.cs" Line="116" Column="8" />
-      <File FileName="Assets/Script/Player.cs" Line="68" Column="21" />
-      <File FileName="Assets/Script/Monster.cs" Line="38" Column="37" />
+      <File FileName="Assets/Script/GameController.cs" Line="18" Column="26" />
+      <File FileName="Assets/Script/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/Monster.cs" Line="1" Column="1" />
       <File FileName="../Downloads/New Unity Project/Assets/Script/Controller/SkillItemController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
