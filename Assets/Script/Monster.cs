@@ -23,8 +23,6 @@ public class Monster : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		print("col_enter:"+col.gameObject.tag); 
-		
 		if (col.gameObject.tag.Equals("Player")) {
 			print ("プレイヤーです");
 

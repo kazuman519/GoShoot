@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		turmPower -= Time.deltaTime * 100;
-		print ("TurntPower:" + turmPower);
+//		print ("TurntPower:" + turmPower);
 
 		if (attackConunt > 0) {
 			attackConunt-= Time.deltaTime;
@@ -41,8 +41,6 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		print("col_enter:"+col.gameObject.tag); 
-
 		if (col.gameObject.tag.Equals("monster")) {
 			print ("モンスターです");
 			Monster monster = col.gameObject.GetComponent<Monster>();

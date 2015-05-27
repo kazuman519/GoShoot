@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class GameController : MonoBehaviour {
 	 
@@ -26,24 +28,27 @@ public class GameController : MonoBehaviour {
 	public Text hpValue;
 	public Text spValue;
 	 
-	float rollReadyTimeCount;
-	float rollTimeCount;
-	float battleReadyTimeCount;
-	float battleTimeCount;
-	int rollCount;
+	private float rollReadyTimeCount;
+	private float rollTimeCount;
+	private float battleReadyTimeCount;
+	private float battleTimeCount;
+	private int rollCount;
 
 	// game flag
-	bool isRollReadyTurn;
-	bool isRollTurn;
-	bool isBattleReadyTurn;
-	bool isBattleStart;
-	bool isBattleTurn;
-	bool isBatteleEnd;
-	bool isResultTurn;
+	private bool isRollReadyTurn;
+	private bool isRollTurn;
+	private bool isBattleReadyTurn;
+	private bool isBattleStart;
+	private bool isBattleTurn;
+	private bool isBatteleEnd;
+	private bool isResultTurn;
 
 	// template color
-	Color defaultCentetTitleColor;
-	
+	private Color defaultCentetTitleColor;
+
+	public LineRenderer lineRenderer;
+	List<Vector3> drawRopePositionList = new List<Vector3>();
+
 	// Use this for initialization
 	void Start () {
 		print ("name:"+player.name);
@@ -70,6 +75,10 @@ public class GameController : MonoBehaviour {
 		isResultTurn = false;
 
 		defaultCentetTitleColor = centerTitle.color;
+
+		lineRenderer.enabled = true;
+
+		print("RollReady Turn");
 	}
 	
 	// Update is called once per frame
@@ -81,7 +90,6 @@ public class GameController : MonoBehaviour {
 			/*
 			 * ロールスタートのカウントターン
 			 */
-			print("RollReady Turn");
 			rollReadyTimeCount -= Time.deltaTime;
 			if (rollReadyTimeCount <= 0) {
 				centerTitle.text = "Start!!";
@@ -89,6 +97,7 @@ public class GameController : MonoBehaviour {
 				// change flag
 				isRollReadyTurn = false;
 				isRollTurn = true;
+				print ("Roll Turn");
 			} else if (rollReadyTimeCount <= 0) {
 				centerTitle.text = "Roll Ready?";
 			}
@@ -96,7 +105,6 @@ public class GameController : MonoBehaviour {
 			/*
 			 * ロールターン
 			 */
-			print("Roll Turn");
 			rollTimeCount -= Time.deltaTime;
 			rollNum.text = "Roll:" + rollCount;
 
@@ -106,6 +114,7 @@ public class GameController : MonoBehaviour {
 				// change flag
 				isRollTurn = false;
 				isBattleReadyTurn = true;
+				print ("ButtleReady Turn");
 			} else if (rollTimeCount <= -1.0f) {
 				headerTitle.text = "合図と共に紐を引け!!";
 				centerTitle.text = "next";
@@ -120,7 +129,6 @@ public class GameController : MonoBehaviour {
 			/*
 			 * バトルスタートのカウントターン
 			 */
-			print("ButtleReady Turn");
 			battleReadyTimeCount -= Time.deltaTime;
 			if (battleReadyTimeCount <= 0f) {
 				centerTitle.text = "Shoot!!!";
@@ -128,6 +136,7 @@ public class GameController : MonoBehaviour {
 				// change flag
 				isBattleReadyTurn = false;
 				isBattleStart = true;
+				print ("Buttle Turn");
 			} else if (battleReadyTimeCount <= 3.0f) {
 				centerTitle.text = "Battle Ready?";
 				centerTitle.color = defaultCentetTitleColor;
@@ -136,7 +145,6 @@ public class GameController : MonoBehaviour {
 			/*
 			 * バトルターン
 			 */
-			print("Buttle Turn");
 			battleTimeCount += Time.deltaTime; // バトルタイムカウントは増えてく
 
 			// プレイヤーとモンスターを回す
@@ -156,8 +164,8 @@ public class GameController : MonoBehaviour {
 
 			// バトルが終わったかの管理
 			if (isBatteleEnd) {
-				print("Buttle End");
-				replayButton.gameObject.SetActive(true);
+				print ("Buttle End");
+				replayButton.gameObject.SetActive (true);
 
 				// change flag
 				isBatteleEnd = false;
@@ -192,9 +200,10 @@ public class GameController : MonoBehaviour {
 			// change flag
 			isBattleStart = false;
 			isBattleTurn = true;
-			changeCanvas(battleCanvas);
+			changeCanvas (battleCanvas);
 			changeCmera (MainCamera);
 		}
+
 		if (Input.GetMouseButtonDown(0)
 		    || Input.touchCount > 0) {
 			print ("downsitayo");
@@ -222,9 +231,47 @@ public class GameController : MonoBehaviour {
 				isBattleTurn = true;
 			}
 		}
+
+		if (Input.GetMouseButton (0)) {
+			DrawRope ();
+		}
+	}
+
+
+	private void OnTriggerEnter(Collider other)
+	{
+		print ("hoge");
+		print (other.gameObject.tag);
 	}
 	
+	void DrawRope() {
+		Vector3 pos = Input.mousePosition;
+		pos.z = 25;
+//		player.transform.position = playerCamera.ScreenToWorldPoint(pos);
+		Vector3 mousePosition = playerCamera.ScreenToWorldPoint(pos);
+		player.ropeBox.transform.position = mousePosition;
+//		print ("Camera   pos -> (x:"+mousePosition.x+", y:"+mousePosition.y+", z:"+mousePosition.z+")");
+//		print ("drawRope pos -> (x:"+Input.mousePosition.x+", y:"+Input.mousePosition.y+", z:"+Input.mousePosition.z+")");
 
+		// drawRopePositionListは後にロープの長さの計算を行うため作成している
+		// 線を描画したいだけであれば直接、LineRendererに座標を格納するので良い
+		// ただし、余計な描画は避ける為に、最後と同じ位置であれば座標を格納しないようにしている
+		if (drawRopePositionList.Count == 0 || (mousePosition != drawRopePositionList.Last())) {
+			drawRopePositionList.Add(mousePosition);
+		}
+		if (drawRopePositionList.Count > 0) {
+			// 座標の格納可能数を更新する
+//			lineRenderer.SetVertexCount(drawRopePositionList.Count);
+
+			// 座標を格納する 
+			// SetPosition(index, Vector3)
+			// 既にindexに座標が格納されている場合、更新される
+			// これを利用して毎フレーム毎に伸び縮みする線の描画等も可能
+//			lineRenderer.SetPosition(drawRopePositionList.Count - 1, mousePosition);
+		}
+	}
+	
+	
 	void changeCmera(Camera camera) {
 		MainCamera.enabled = false;
 		SubCamera.enabled = false;
