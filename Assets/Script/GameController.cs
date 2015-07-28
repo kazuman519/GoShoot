@@ -215,7 +215,7 @@ public class GameController : MonoBehaviour {
 //			headerTitle.text = "touch pos x:"+touchPosition.x+", y:"+touchPosition.y;
 
 			if (isRollTurn) {
-				//Vector3 vec =  new Vector3(touchPosition.x,touchPosition.y,player.ropeBox.transform.position.z);
+//				Vector3 vec =  new Vector3(touchPosition.x,touchPosition.y,player.ropeBox.transform.position.z);
 				//player.ropeBox.transform.position = playerCamera.ScreenToWorldPoint(vec);;
 
 
